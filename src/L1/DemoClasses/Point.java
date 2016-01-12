@@ -7,25 +7,21 @@ import L1.Interfaces.*;
         final double xAxisPosition;
         final double yAxisPosition;
 
-        //Свой конструктор
-        Point(double x, double y) {
+        public Point(double x, double y) {
             this.xAxisPosition = x;
             this.yAxisPosition = y;
         }
 
-        //Возвести в квадрат разность двух чисел
         private double involuteTheDifferenceOfTwoNumbers(double a, double b) {
             return Math.pow(a - b, 2);
         }
         
-        //Найти расстояние до другой точки
         public double findDistanceToAnotherPoint(Point another) {
             return Math.sqrt(involuteTheDifferenceOfTwoNumbers(another.xAxisPosition, this.xAxisPosition)
                     + involuteTheDifferenceOfTwoNumbers(another.yAxisPosition, this.yAxisPosition));
         }
         
         @Override
-        //Сравнить с другой точкой
         public boolean equals(Object anObject) {
             if (this == anObject) return true;
             if (anObject instanceof Point) {

@@ -4,7 +4,7 @@ import java.util.Iterator;
 import L1.Exceptions.*;
 public class Polygon extends Polyline {
     
-    Polygon()
+    public Polygon()
     {
         super();
     }

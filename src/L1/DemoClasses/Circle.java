@@ -2,11 +2,11 @@ package L1.DemoClasses;
 
 import static java.lang.Math.*;
 
-class Circle extends Figure {
+public class Circle extends Figure {
     private final Point circumcentre;
     private final double circleRadius;
     
-    Circle (Point centre, double radius)
+    public Circle (Point centre, double radius)
     {
         super();
         this.circumcentre = centre;
