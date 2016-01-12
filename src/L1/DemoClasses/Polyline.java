@@ -1,7 +1,9 @@
-package L1.MainPackage;
+package L1.DemoClasses;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import L1.Interfaces.*;
+import L1.Exceptions.*;
 
 class Polyline extends Figure implements GenericInterface{
     public final LinkedHashMap<Point, String> points;

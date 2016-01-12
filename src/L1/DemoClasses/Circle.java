@@ -1,4 +1,4 @@
-package L1.MainPackage;
+package L1.DemoClasses;
 
 import static java.lang.Math.*;
 

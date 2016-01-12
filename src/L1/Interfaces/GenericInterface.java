@@ -1,6 +1,8 @@
-package L1.MainPackage;
+package L1.Interfaces;
 
-interface GenericInterface <E> {
+import L1.Exceptions.*;
+
+public interface GenericInterface <E> {
     boolean isElementAlreadyExists(E elementToAdd);
     void addElement(E elementToAdd, String letter) throws GeometricException;
     void removeElement(E elementToDelete);

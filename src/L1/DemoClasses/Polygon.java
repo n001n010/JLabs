@@ -1,7 +1,7 @@
-package L1.MainPackage;
+package L1.DemoClasses;
 
 import java.util.Iterator;
-
+import L1.Exceptions.*;
 public class Polygon extends Polyline {
     
     Polygon()

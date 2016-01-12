@@ -1,6 +1,7 @@
 
-package L1.MainPackage;
-
+package L1.DemoClasses;
+import L1.Interfaces.*;
+import L1.Exceptions.*;
 abstract public class Figure implements MainInterface{
     String htmlСolor;
     Double mmLineWeight;

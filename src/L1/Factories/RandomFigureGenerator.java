@@ -1,4 +1,4 @@
-package L1.MainPackage;
+package L1.Factories;
 
 public class RandomFigureGenerator {
     

@@ -1,8 +1,11 @@
-package L1.MainPackage;
+package L1.DemoClasses;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
+
+import L1.Interfaces.*;
+import L1.Exceptions.*;
 
 class Region implements GenericInterface{
     public final Map <Figure, String> figures;

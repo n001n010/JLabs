@@ -1,6 +1,8 @@
-package L1.MainPackage;
+package L1.DemoClasses;
 
-    class Point implements DebugOutputStream{
+import L1.Interfaces.*;
+
+    public class Point implements DebugOutputStream{
 
         final double xAxisPosition;
         final double yAxisPosition;

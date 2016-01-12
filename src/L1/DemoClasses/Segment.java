@@ -1,4 +1,6 @@
-package L1.MainPackage;
+package L1.DemoClasses;
+
+import L1.Exceptions.*;
 
 class Segment extends Figure{
     Point segmentStart;
