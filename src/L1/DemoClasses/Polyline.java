@@ -5,38 +5,38 @@ import java.util.LinkedHashMap;
 import L1.Interfaces.*;
 import L1.Exceptions.*;
 
-class Polyline extends Figure implements GenericInterface{
-    public final LinkedHashMap<Point, String> points;
+class Polyline extends Figure implements GenericInterface {
+    final LinkedHashMap<Point, String> points;
     Point first;
     Point last;
     Point previous;
-    Point next; 
-    
-    Polyline()
-    {
+    Point next;
+
+    Polyline() {
         super();
         this.points = new LinkedHashMap<>();
     }
-    
+
     @Override
-    public boolean isElementAlreadyExists(Object pointToAdd){
+    public boolean isElementAlreadyExists(Object pointToAdd) {
         Iterator<Point> polylineItr = points.keySet().iterator();
         while (polylineItr.hasNext()) {
-            if(pointToAdd.equals(polylineItr.next()))
+            if (pointToAdd.equals(polylineItr.next())) {
                 return true;
+            }
         }
         return false;
     }
-    
+
     @Override
     public void addElement(Object pointToAdd, String letter) throws GeometricException {
-        if(isElementAlreadyExists(pointToAdd)==true || this.points.containsValue(letter)) {
-                String exceptionMessage = "Point with such name or coordinates is already exists!";
-                throw new GeometricException(exceptionMessage, (Point)pointToAdd, letter);
-            }
-            this.points.put((Point)pointToAdd, letter);
+        if (isElementAlreadyExists(pointToAdd) == true || this.points.containsValue(letter)) {
+            String exceptionMessage = "Point with such name or coordinates is already exists!";
+            throw new GeometricException(exceptionMessage, (Point) pointToAdd, letter);
         }
-    
+        this.points.put((Point) pointToAdd, letter);
+    }
+
     @Override
     public void removeElement(Object pointToDelete) {
         Iterator<Point> polylineItr = points.keySet().iterator();
@@ -48,23 +48,24 @@ class Polyline extends Figure implements GenericInterface{
             }
         }
     }
-       
+
     @Override
     double calculatePerimeter() {
         double perimeter = 0;
-        
-        Iterator<Point> polylineItr = points.keySet().iterator();   
-        
+        Iterator<Point> polylineItr = points.keySet().iterator();
+
         previous = polylineItr.next();
         first = previous;
-        
+
         while (polylineItr.hasNext()) {
             next = polylineItr.next();
             perimeter += previous.findDistanceToAnotherPoint(next);
             previous = next;
-            if(!polylineItr.hasNext()) last = next;
+            if (!polylineItr.hasNext()) {
+                last = next;
+            }
         }
-        
+
         return perimeter + first.findDistanceToAnotherPoint(last);
     }
 
@@ -76,6 +77,6 @@ class Polyline extends Figure implements GenericInterface{
 
     @Override
     public String getInformation() {
-        return " with " + points.size()+" points: "+points.toString();
+        return " with " + points.size() + " points: " + points.toString();
     }
 }

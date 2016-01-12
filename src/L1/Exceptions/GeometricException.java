@@ -2,33 +2,32 @@ package L1.Exceptions;
 
 import L1.DemoClasses.*;
 
-public class GeometricException extends Exception{
-    private Point wrongPoint;
-    private String wrongLetter;
-    private Figure wrongFigure;
-    private String wrongFigureName;
-    
-   public GeometricException(String addFigureEx, Figure wrong, String name){
+public class GeometricException extends Exception {
+    private Point badPoint;
+    private String badName;
+    private Figure badFigure;
+
+    public GeometricException(String addFigureEx, Figure badFigure, String badName) {
         super(addFigureEx);
-        this.wrongFigure = wrong;
-        this.wrongFigureName = name;
-    }    
-    
-    public GeometricException(String addPointEx, Point wrong, String letter){
-        super(addPointEx);
-        this.wrongPoint = wrong;
-        this.wrongLetter = letter;
+        this.badFigure = badFigure;
+        this.badName = badName;
     }
-    
-    public GeometricException(String calculationEx){
+
+    public GeometricException(String addPointEx, Point badPoint, String badName) {
+        super(addPointEx);
+        this.badPoint = badPoint;
+        this.badName = badName;
+    }
+
+    public GeometricException(String calculationEx) {
         super(calculationEx);
     }
-    
-    public GeometricException(String segmentNameLengthEx, String transferredName, Integer length){
-        super(segmentNameLengthEx+": "+transferredName+" length is "+length.toString());
+
+    public GeometricException(String segmentNameLengthEx, String transferredName, Integer length) {
+        super(segmentNameLengthEx + ": " + transferredName + " length is " + length.toString());
     }
-    
-    public void getWrongParameters(){
-        System.err.println(this.wrongLetter+this.wrongPoint.getInformation());
+
+    public void getWrongParameters() {
+        System.err.println(this.badName + this.badPoint.getInformation());
     }
 }

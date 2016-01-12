@@ -3,31 +3,29 @@ package L1.DemoClasses;
 import static java.lang.Math.*;
 
 public class Circle extends Figure {
+
     private final Point circumcentre;
-    private final double circleRadius;
-    
-    public Circle (Point centre, double radius)
-    {
+    private final double radius;
+
+    public Circle(Point circumcentre, double radius) {
         super();
-        this.circumcentre = centre;
-        this.circleRadius = radius;
+        this.circumcentre = circumcentre;
+        this.radius = radius;
     }
 
     @Override
-    double calculatePerimeter()
-    {
-        return this.circleRadius * 2 * PI;
+    double calculatePerimeter() {
+        return this.radius * 2 * PI;
     }
-    
+
     @Override
-    double calculateArea()
-    {
-        return pow(this.circleRadius, 2) * PI;
+    double calculateArea() {
+        return pow(this.radius, 2) * PI;
     }
-    
+
     @Override
-    public String getInformation()
-    {
-        return " which centre is "+this.circumcentre +", radius is "+ this.circleRadius;
+    public String getInformation() {
+        return " which centre is " + this.circumcentre + 
+               ", radius is " + this.radius;
     }
 }

@@ -4,35 +4,36 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Iterator;
 
-import L1.Interfaces.*;
-import L1.Exceptions.*;
+import L1.Interfaces.GenericInterface;
+import L1.Exceptions.GeometricException;
 
-class Region implements GenericInterface{
-    public final Map <Figure, String> figures;
+class Region implements GenericInterface {
+
+    public final Map<Figure, String> figures;
     Figure previous;
-    
-    Region(){
-        this.figures = new HashMap <>();
+
+    Region() {
+        this.figures = new HashMap<>();
     }
-    
+
     @Override
-    public boolean isElementAlreadyExists (Object figureToAdd){
+    public boolean isElementAlreadyExists(Object figureToAdd) {
         Iterator<Figure> regionItr = figures.keySet().iterator();
         while (regionItr.hasNext()) {
-            if(figureToAdd.equals(regionItr.next()))
-                return true;
+            if (figureToAdd.equals(regionItr.next())) return true;
         }
         return false;
     }
-    
+
     @Override
     public void addElement(Object figureToAdd, String letter) throws GeometricException {
-        if(isElementAlreadyExists((Figure)figureToAdd)==true || this.figures.containsValue(letter)) {
-                String exceptionMessage = "Point with such name or coordinates is already exists!";
-                throw new GeometricException(exceptionMessage, (Figure)figureToAdd, letter);
-            }
-            this.figures.put((Figure)figureToAdd, letter);
+        if (isElementAlreadyExists((Figure) figureToAdd) == true || 
+            this.figures.containsValue(letter)) {
+            String exceptionMessage = "Point with such name or coordinates is already exists!";
+            throw new GeometricException(exceptionMessage, (Figure) figureToAdd, letter);
         }
+        this.figures.put((Figure) figureToAdd, letter);
+    }
 
     @Override
     public void removeElement(Object pointToDelete) {
@@ -44,5 +45,5 @@ class Region implements GenericInterface{
                 break;
             }
         }
-    }       
+    }
 }
