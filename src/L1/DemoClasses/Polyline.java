@@ -66,7 +66,7 @@ class Polyline extends Figure implements GenericInterface {
             }
         }
 
-        return perimeter + first.findDistanceToAnotherPoint(last);
+        return perimeter;
     }
 
     @Override
@@ -77,6 +77,6 @@ class Polyline extends Figure implements GenericInterface {
 
     @Override
     public String getInformation() {
-        return " with " + points.size() + " points: " + points.toString();
+        return " with " + points.size() + " points: " + points;
     }
 }

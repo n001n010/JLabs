@@ -3,10 +3,10 @@ package L1.DemoClasses;
 import L1.Exceptions.GeometricException;
 
 class Segment extends Figure {
-    Point segmentStart;
-    char segmentStartLetter;
-    Point segmentEnd;
-    char segmentEndLetter;
+    Point start;
+    char startLetter;
+    Point end;
+    char endLetter;
 
     Segment(Point start, Point end, String Name) throws GeometricException {
         super();
@@ -23,16 +23,16 @@ class Segment extends Figure {
             throw new GeometricException(exceptionMessage, end, String.valueOf(Name.charAt(1)));
         }
 
-        this.segmentStart = start;
-        this.segmentEnd = end;
-        this.segmentStartLetter = Name.charAt(0);
-        this.segmentEndLetter = Name.charAt(1);
+        this.start = start;
+        this.end = end;
+        this.startLetter = Name.charAt(0);
+        this.endLetter = Name.charAt(1);
     }
 
     @Override
     double calculatePerimeter() throws GeometricException {
         String exceptionMessage = "Segment has no perimeter! But it has length, which is "
-                + segmentStart.findDistanceToAnotherPoint(segmentEnd) + " :)";
+                                + this.start.findDistanceToAnotherPoint(this.end) + " :)";
         throw new GeometricException(exceptionMessage);
     }
 
@@ -44,8 +44,8 @@ class Segment extends Figure {
 
     @Override
     public String getInformation() {
-        return " " + segmentStartLetter + segmentEndLetter
-                   + "[" + segmentStart.getInformation() + ";"
-                         + segmentEnd.getInformation() + "]";
+        return " " + startLetter + endLetter
+                   + "[" + start.getInformation() + ";"
+                         + end.getInformation() + "]";
     }
 }

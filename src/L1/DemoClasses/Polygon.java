@@ -25,6 +25,11 @@ public class Polygon extends Polyline {
     }
 
     @Override
+    double calculatePerimeter() {
+        return super.calculatePerimeter()+first.findDistanceToAnotherPoint(last);
+    }
+    
+    @Override
     double calculateArea() {
         double area = 0;
         Iterator<Point> polygonItr = points.keySet().iterator();
@@ -50,7 +55,7 @@ public class Polygon extends Polyline {
     public String getInformation() {
         try {
             return figuringOut(this.points.size()) + " with " + points.size() 
-                                                   + " points: " + points.toString();
+                                                   + " points: " + points;
         } catch (GeometricException e) {
             e.printStackTrace();
         }
