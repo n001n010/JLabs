@@ -9,7 +9,7 @@ public class GeometricException extends Exception {
 
     public GeometricException(String addFigureEx, Figure badFigure, String badName) {
         super(addFigureEx);
-        this.badFigure = badFigure;
+        this.badFigure = badFigure; //idea gittest
         this.badName = badName;
     }
 

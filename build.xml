@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<project name="L1.FiguresDemonstration" default="default" basedir=".">
-    <description>Builds, tests, and runs the project L1.FiguresDemonstration.</description>
-    <import file="nbproject/build-impl.xml"/>
-
-
-
-</project>

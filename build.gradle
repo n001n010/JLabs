@@ -1,0 +1,20 @@
+import java.awt.Desktop
+
+apply plugin: 'java'
+
+defaultTasks 'clean, test, testresults'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.testng:testng:6.9.10'
+    compile 'junit:junit:4.12'
+}
+
+task testresults (dependsOn:test) {
+    String uri = "build/reports/tests/index.html"
+    File htmlFile = new File(uri)
+    Desktop.getDesktop().browse(htmlFile.toURI())
+}
